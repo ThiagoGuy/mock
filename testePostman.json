@@ -1,0 +1,206 @@
+{
+  "uuid": "268590af-cb69-467d-93f2-6802b41634a2",
+  "lastMigration": 32,
+  "name": "TestePostman",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3003,
+  "hostname": "",
+  "folders": [],
+  "routes": [
+    {
+      "uuid": "a355e3c6-9827-446d-bf82-92fe2ac44bd2",
+      "type": "http",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "clientes",
+      "responses": [
+        {
+          "uuid": "3924c378-797a-44f0-9771-3ca2cb36cf01",
+          "body": "{\n  {\n    \"id\": \"1\",\n    \"name\": \"Diego Silva\"\n    \"email\": \"diegosilva@gmail.com\"\n  },\n    {\n    \"id\": \"2\",\n    \"name\": \"Tayane Martinez\"\n    \"email\": \"tayanemartinez@gmail.com\"\n  },\n    {\n    \"id\": \"3\",\n    \"name\": \"Thiago Guy\"\n    \"email\": \"thiagoguy@gmail.com\"\n  }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null
+    },
+    {
+      "uuid": "c43426d8-2189-40cb-be1d-ba75c12f576a",
+      "type": "http",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "cliente/:userid",
+      "responses": [
+        {
+          "uuid": "4a216f30-b414-40ac-8b43-c37dd31926b6",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "2d29c0d0-3d4e-4d00-a324-5d1d7212630d",
+          "body": "{\n  \"id\": \"1\",\n  \"name\": \"Diego Silva\"\n  \"email\": \"diegosilva@gmail.com\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "userid",
+              "value": "1",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "c6f1aabf-bcbf-4d95-9b55-3a7fc22f8629",
+          "body": "{\n  \"id\": \"2\",\n  \"name\": \"Tayane Martinez\"\n  \"email\": \"tayanemartinez@gmail.com\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "userid",
+              "value": "2",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "9aaa4d37-4950-4593-8f8b-8fe8d1728dd6",
+          "body": "{\n  \"id\": \"3\",\n  \"name\": \"Thiago Guy\"\n  \"email\": \"thiagoguy@gmail.com\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "userid",
+              "value": "3",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null
+    }
+  ],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "a355e3c6-9827-446d-bf82-92fe2ac44bd2"
+    },
+    {
+      "type": "route",
+      "uuid": "c43426d8-2189-40cb-be1d-ba75c12f576a"
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    },
+    {
+      "key": "Access-Control-Allow-Origin",
+      "value": "*"
+    },
+    {
+      "key": "Access-Control-Allow-Methods",
+      "value": "GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS"
+    },
+    {
+      "key": "Access-Control-Allow-Headers",
+      "value": "Content-Type, Origin, Accept, Authorization, Content-Length, X-Requested-With"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "data": [],
+  "callbacks": []
+}
